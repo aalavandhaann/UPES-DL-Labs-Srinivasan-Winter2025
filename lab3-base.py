@@ -12,8 +12,8 @@ import numpy as np
 
 # Resize images to match VGG16 input size (224x224)
 # This will perform a bulk resize of the input images to 224 x 224
-x_train = tf.image.resize(x_train, [224, 224])
-x_test = tf.image.resize(x_test, [224, 224])
+# x_train = tf.image.resize(x_train, [224, 224])
+# x_test = tf.image.resize(x_test, [224, 224])
 
 # Normalize pixel values
 # This is the step of normalization, 
@@ -28,7 +28,7 @@ y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
 
 # Load VGG16 without the top classifier layers
-base_model = VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+base_model = VGG16(weights='imagenet', include_top=False, input_shape=(32, 32, 3))
 base_model.trainable = False  # Freeze base model
 
 # Build the new model

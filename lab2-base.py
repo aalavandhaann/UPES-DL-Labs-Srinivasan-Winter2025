@@ -21,7 +21,9 @@ def load_and_preprocess_data() -> Tuple[Tuple[np.ndarray, np.ndarray], Tuple[np.
     y_train = to_categorical(y_train, 10)
     y_test = to_categorical(y_test, 10)
 
-    return (x_train, y_train), (x_test, y_test)
+    
+
+    return ( (x_train, y_train), (x_test, y_test) )
 
 def build_cnn_model(input_shape: Tuple[int, int, int], num_classes: int) -> models.Model:
     model = models.Sequential([
